@@ -1,158 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
-    <title>Food Website</title>
-    <link rel="stylesheet" href="/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightening Quick Delivery</title>
+
+
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --navbar-height: 59px;
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+
+    }
+
+    #logo img {
+        height: 100px;
+        margin: 20px 20px;
+
+    }
+
+    #navbar {
+        position: relative;
+        top: 0%;
+    }
+
+    #navbar ul {
+        display: flex;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    #navbar ul li {
+        list-style: none;
+        font-size: 1.3rem;
+    }
+
+    #navbar ul li a {
+        display: block;
+        padding: 3px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+
+
+    }
+
+    #navbar ul li a:hover {
+        color: rgb(241, 10, 10);
+        background-color: black;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        height: 615px;
+        padding: 3px 200px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home::before {
+        content: "";
+        background: url('https://img.freepik.com/free-photo/healthy-food-background-autumn-fresh-vegetables-dark-stone-table-with-copy-space-top-view_127032-1954.jpg?size=626&ext=jpg&ga=GA1.2.2032489523.1630713600')no-repeat center center/cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 768px;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.89;
+
+    }
+
+    #services {
+        margin: 34px;
+        display: flex;
+
+    }
+
+    #services .box {
+        border: 2px solid black;
+        padding: 34px;
+        margin: 3px 6px;
+        border-radius: 28px;
+        background: url('https://videohive.img.customer.envatousercontent.com/files/71eeb05b-4caf-4444-b807-0db0dbc3ea33/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=14f624ae504c83c041423905ea923702')no-repeat center center/cover;
+    }
+
+    #services .box img {
+        border: 3px solid yellow;
+        border-radius: 10px;
+        height: 215px;
+        display: block;
+        margin: auto;
+    }
+
+    #services .box p {
+        font-size: 17px;
+        font-family: sans-serif;
+        color: white;
+        font-weight: bold;
+
+    }
+
+
+    #client-section {
+
+        height: 344px;
+    }
+
+    #client-section::before {
+        content: "";
+        position: absolute;
+        background: url('https://www.highlightpr.co.uk/wp-content/uploads/2018/01/iStock-friends-and-family-enjoying-dinner-small.jpg')no-repeat center center/cover;
+        width: 100%;
+        height: 54%;
+        z-index: -1;
+        opacity: 0.6;
+
+    }
+
+    #clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #clients img {
+        height: 124px;
+    }
+
+    #client-item {
+        padding: 44px;
+    }
+
+    #contact {
+        position: relative;
+
+    }
+
+    #contact-box form {
+        width: 40%;
+
+    }
+
+    #contact-box label {
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-family: cursive
+    }
+
+    #contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 34px;
+
+    }
+
+    #contact-box input,
+    #contact-box textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid black;
+    }
+
+    #contact::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background: url('https://33o9c7cfv3ityy9t19d62pqt-wpengine.netdna-ssl.com/wp-content/uploads/contacttable.jpg')no-repeat center center/cover;
+    }
+
+    footer {
+        background-color: black;
+        color: yellow;
+        padding: 9px 20px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .h-primary {
+        font-size: 3.8rem;
+        padding: 14px;
+    }
+
+    .h-secondary {
+        font-size: 3rem;
+        padding: 14px;
+        color: white;
+    }
+
+    #home h1 {
+        color: lawngreen;
+        text-align: center;
+        text-shadow: white 2px;
+
+    }
+
+    #home p {
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        color: white;
+        font-weight: bolder;
+        padding: 12px;
+    }
+
+    .btn {
+        padding: 6px 20px;
+        border: 5px solid lawngreen;
+        background-color: black;
+        color: lawngreen;
+        margin: 20px;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+
 <body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Yum%21_Brands_logo.svg/200px-Yum%21_Brands_logo.svg.png"
+                alt="error loading image">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Delicacies</a></li>
+            <li class="item"><a href="#client-section"> Our Clients</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
 
-    <!-- desktop view -->
-    <div class="container" id="container">
-        <div id="menu">
-            <div class="title">
-                <img src="/images/foodie hunter.png" alt="">
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary center">Good Food for good Moments</h1>
+        <p>The food at your doorstep.. Your favourite food delivery partner.</p>
+        <p>Why starve when you have us?Don't starve just Order:)</p>
+        <button class="btn">ORDER NOW</button>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">
+            Take a bite out of hunger:)
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://miro.medium.com/max/803/1*LjxCjwdsUlmdbO6UaHYBVw.png" alt="error loading image">
+                <h2 class="h-secondary center"> Indian Cuisine</h2>
+                <p class="center">A slice of India on your plate.Explore our north and south Indian Cuisine.It is often
+                    said that if you don't love south Indian Cuisine you are either an alien or your taste buds are
+                    spoiled."FROM SOUTH TO YOUR MOUTH":)"</p>
             </div>
-            <div class="menu-item">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Your Orders</a>
-                <a href="#">Wishlists</a>
-                <a href="#">Cart</a>
-                <a href="#">Contact</a>
-                <a href="#">Checkout</a>
+            <div class="box">
+                <img
+                    src="https://media.istockphoto.com/photos/homemade-italian-bruschetta-appetizer-picture-id481765835?k=20&m=481765835&s=612x612&w=0&h=qb_jIq_sPzTsZpCCZJ4fCYrN1ryka1A1umWb83lKWJw=">
+                <h2 class="h-secondary center">Appetizers</h2>
+                <p class="center">Now that your tastes have grown up!!Try our delicious Appetizers which enhances your
+                    hunger and make you eat MORE N MORE. These are like little bites of heaven.Little place,BIG TASTE.
+                    Snack happily everafter!!!</p>
+            </div>
+            <div class="box">
+                <img
+                    src="https://st.depositphotos.com/1900347/4146/i/950/depositphotos_41466555-stock-photo-image-of-slice-of-pizza.jpg">
+                <h2 class="h-secondary center">Fresh Pizzas</h2>
+                <p class="center">What's better than having a cheesy pizza?Especially a pizza that gives you freedom to
+                    choose your own toppings such as black olives, fresh tomato, jalapeno and non-veg toppings too. The
+                    icing on the cake is that you can choose crust of your choice - hand tossed crust, thin crust,cheese
+                    burst crust and many more. So come and explore our mouth-watering pizzas:)</p>
             </div>
         </div>
-
-        <div id="food-container">
-            <div id="header">
-                <div class="add-box">
-                    <i class="fa fa-map-marker your-address" id="add-address"> Your Address</i>
-                </div>
-                <div class="util">
-                    <i class="fa fa-search"> Search</i>
-                    <i class="fa fa-tags"> Offers</i>
-                    <i class="fa fa-cart-plus" id="cart-plus"> 0 Items</i>
-                </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="https://animationvisarts.com/wp-content/uploads/2020/08/Walmart-logo-2008-Now.jpg"
+                    alt="Our Client">
             </div>
-            <div id="food-items" class="d-food-items">
-                <div id="biryani" class="d-biryani">
-                    <p id="category-name">Biryani</p>    
-                </div>
-
-                <div id="chicken" class="d-chicken">
-                    <p id="category-name">Chicken Delicious</p>    
-                </div>
-
-                <div id="paneer" class="d-paneer">
-                    <p id="category-name">Paneer Mania</p>
-                </div>
-
-                <div id="vegetable" class="d-vegetable">
-                    <p id="category-name">Pure Veg Dishes</p> 
-                </div>
-
-                <div id="chinese" class="d-chinese">
-                    <p id="category-name">Chinese Corner</p> 
-                </div>
-
-                <div id="south-indian" class="d-south-indian">
-                    <p id="category-name">South Indian</p>
-                </div>
+            <div class="client-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Skype_logo_2017.svg/1200px-Skype_logo_2017.svg.png"
+                    alt="Our Client">
             </div>
-
-            <div id="cart-page" class="cart-toggle">
-                <p id="cart-title">Cart Items</p>
-                <p id="m-total-amount">Total Amout : 100</p>
-                <table>
-                    <thead>
-                        <td>Item</td>
-                        <td>Name</td>
-                        <td>Quantity</td>
-                        <td>Price</td>
-                    </thead>
-                    <tbody id="table-body">
-                        
-                    </tbody>
-                </table>
-                <div class="btn-box">
-                    <button class="cart-btn">Checkout</button>
-                </div>
+            <div class="client-item">
+                <img src="data:image/png;base64,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"
+                    alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="data:image/png;base64,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"
+                    alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="https://logos-world.net/wp-content/uploads/2020/11/eBay-Emblem.png" alt="Our Client">
             </div>
         </div>
-
-        <div id="cart">
-            <div class="taste-header">
-                <div class="user">
-                    <i class="fa fa-user-circle" id="circle"> Account</i>
-                    
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your name">
                 </div>
-            </div>
-            <div id="category-list">
-                <p class="item-menu">Go For Hunt</p>
-                <div class="border"></div>                
-            </div>
-            <div id="checkout" class="cart-toggle">
-                <p id="total-item">Total Item : 5</p>
-                <p id="total-price"></p>
-                <p id="delievery">Free delievery on $ 40</p>
-                <button class="cart-btn">Checkout</button>
-            </div>
+                <div class="form-group">
+                    <label for="name">E-mail:</label>
+                    <input type="email" name="name" id="name" placeholder="Enter Your email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Contact Number:</label>
+                    <input type="phone" name="name" id="email" placeholder="Enter Your Contact Number">
+                </div>
+                <div class="form-group">
+                    <label for="name">Delivery Address:</label>
+                    <input type="address" name="name" id="address" placeholder="Enter Delivery Address">
+                </div>
+                <div class="form-group">
+                    <label for="name">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
         </div>
-    </div>
-
-
-    <!-- mobile view -->
-    <div id="mobile-view" class="mobile-view">
-        <div class="mobile-top">
-            <div class="logo-box">
-                <img src="/images/foodielogo.png" alt="" id="logo">
-                <i class="fa fa-map-marker your-address" id="m-add-address"> Your Address</i>
-            </div>
-            <div class="top-menu">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-tag"></i>
-                <i class="fa fa-heart-o"></i>
-                <i class="fa fa-cart-plus" id="m-cart-plus"> 0</i>
-            </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.LighteningQuickDelivery.com. All rights reserved!
         </div>
-        
-        <div class="item-container">
-            <div class="category-header" id="category-header">  
-            </div>
-
-            <div id="food-items" class="food-items">
-                <div id="biryani" class="m-biryani">
-                    <p id="category-name">Biryani</p>    
-                </div>
-                <div id="chicken" class="m-chicken">
-                    <p id="category-name">Chicken Delicious</p>    
-                </div>
-                <div id="paneer" class="m-paneer">
-                    <p id="category-name">Paneer Mania</p>
-                </div>
-                <div id="vegetable" class="m-vegetable">
-                    <p id="category-name">Pure Veg Dishes</p> 
-                </div>
-                <div id="chinese" class="m-chinese">
-                    <p id="category-name">Chinese Corner</p> 
-                </div>
-                <div id="south-indian" class="m-south-indian">
-                    <p id="category-name">South Indian</p>
-                </div>
-            </div>            
-        </div>
-
-        <div class="mobile-footer">
-            <p>Home</p>
-            <p>Cart</p>
-            <p>offers</p>
-            <p>orders</p>
-        </div>
-    </div>
-    <script src="/index.js" type="module"></script>
+    </footer>
 </body>
+
 </html>
